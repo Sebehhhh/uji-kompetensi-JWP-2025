@@ -70,6 +70,7 @@ class MobilController extends Controller
             'merek' => 'required|string|max:255',
             'harga' => 'required|numeric|min:0',
             'kapasitas_mesin' => 'required|integer|min:1',
+            'jenis_mobil_id' => 'nullable|exists:jenis_mobils,id',
         ]);
 
         Mobil::create($validatedData);
@@ -105,6 +106,7 @@ class MobilController extends Controller
             'merek' => 'required|string|max:255',
             'harga' => 'required|numeric|min:0',
             'kapasitas_mesin' => 'required|integer|min:1',
+            'jenis_mobil_id' => 'nullable|exists:jenis_mobils,id',
         ]);
 
         $mobil->update($validatedData);

@@ -31,11 +31,11 @@ class JenisMobilController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'nama_jenis' => 'required|string|max:255|unique:jenis_mobils',
         ]);
 
-        JenisMobil::create($request->validated());
+        JenisMobil::create($validatedData);
 
         return redirect()->route('jenis-mobils.index')
             ->with('success', 'Jenis mobil berhasil ditambahkan.');
@@ -63,11 +63,11 @@ class JenisMobilController extends Controller
      */
     public function update(Request $request, JenisMobil $jenisMobil)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'nama_jenis' => 'required|string|max:255|unique:jenis_mobils,nama_jenis,' . $jenisMobil->id,
         ]);
 
-        $jenisMobil->update($request->validated());
+        $jenisMobil->update($validatedData);
 
         return redirect()->route('jenis-mobils.index')
             ->with('success', 'Jenis mobil berhasil diperbarui.');
