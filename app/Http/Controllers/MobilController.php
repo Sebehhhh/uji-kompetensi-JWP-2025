@@ -16,6 +16,7 @@ class MobilController extends Controller
     {
         $query = Mobil::with('jenisMobil');
 
+        // Filter by search
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search) {
@@ -24,11 +25,31 @@ class MobilController extends Controller
             });
         }
 
-        $mobils = $query->orderByDesc('harga')
-                       ->orderByDesc('kapasitas_mesin')
+        // Filter by jenis mobil
+        if ($request->filled('jenis_mobil_id')) {
+            $query->where('jenis_mobil_id', $request->jenis_mobil_id);
+        }
+
+        // Filter by CC range
+        if ($request->filled('cc_filter')) {
+            $ccFilter = $request->cc_filter;
+            $customCC = $request->custom_cc;
+            
+            if ($ccFilter == 'above' && $customCC) {
+                $query->where('kapasitas_mesin', '>', $customCC);
+            } elseif ($ccFilter == 'below' && $customCC) {
+                $query->where('kapasitas_mesin', '<', $customCC);
+            } elseif ($ccFilter == 'exact' && $customCC) {
+                $query->where('kapasitas_mesin', $customCC);
+            }
+        }
+
+        $mobils = $query->orderByDesc('id')
                        ->paginate(10);
 
-        return view('mobils.index', compact('mobils'));
+        $jenisMobils = JenisMobil::all();
+
+        return view('mobils.index', compact('mobils', 'jenisMobils'));
     }
 
     /**

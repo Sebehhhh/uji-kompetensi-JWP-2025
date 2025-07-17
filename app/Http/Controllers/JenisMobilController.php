@@ -12,7 +12,9 @@ class JenisMobilController extends Controller
      */
     public function index()
     {
-        $jenisMobils = JenisMobil::withCount('mobils')->paginate(10);
+        $jenisMobils = JenisMobil::withCount('mobils')
+                                 ->orderByDesc('id')
+                                 ->paginate(10);
         return view('jenis-mobils.index', compact('jenisMobils'));
     }
 
