@@ -1,0 +1,72 @@
+DATA MOBIL SHOWROOM
+===================
+
+ID: 6
+Merek: BMW X5
+Harga: Rp 1.200.000.000
+Kapasitas Mesin: 3000 cc
+Jenis Mobil: Kapasitas Mesin Besar
+-------------------
+
+ID: 10
+Merek: Honda Civic
+Harga: Rp 580.000.000
+Kapasitas Mesin: 1500 cc
+Jenis Mobil: Kapasitas Mesin Menengah
+-------------------
+
+ID: 3
+Merek: Mitsubishi Pajero
+Harga: Rp 540.000.000
+Kapasitas Mesin: 2500 cc
+Jenis Mobil: Kapasitas Mesin Besar
+-------------------
+
+ID: 9
+Merek: Toyota Fortuner
+Harga: Rp 520.000.000
+Kapasitas Mesin: 2700 cc
+Jenis Mobil: Kapasitas Mesin Besar
+-------------------
+
+ID: 5
+Merek: Honda CR-V
+Harga: Rp 450.000.000
+Kapasitas Mesin: 1500 cc
+Jenis Mobil: Kapasitas Mesin Menengah
+-------------------
+
+ID: 4
+Merek: Toyota Innova
+Harga: Rp 350.000.000
+Kapasitas Mesin: 2000 cc
+Jenis Mobil: Kapasitas Mesin Menengah
+-------------------
+
+ID: 2
+Merek: Honda Jazz
+Harga: Rp 280.000.000
+Kapasitas Mesin: 1500 cc
+Jenis Mobil: Kapasitas Mesin Menengah
+-------------------
+
+ID: 7
+Merek: Suzuki Ertiga
+Harga: Rp 240.000.000
+Kapasitas Mesin: 1400 cc
+Jenis Mobil: Kapasitas Mesin Kecil
+-------------------
+
+ID: 1
+Merek: Toyota Avanza
+Harga: Rp 220.000.000
+Kapasitas Mesin: 1300 cc
+Jenis Mobil: Kapasitas Mesin Kecil
+-------------------
+
+ID: 8
+Merek: Daihatsu Xenia
+Harga: Rp 200.000.000
+Kapasitas Mesin: 1300 cc
+Jenis Mobil: Kapasitas Mesin Kecil
+-------------------
