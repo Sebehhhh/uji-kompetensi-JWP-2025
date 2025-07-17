@@ -66,13 +66,13 @@ class MobilController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'merek' => 'required|string|max:255',
             'harga' => 'required|numeric|min:0',
             'kapasitas_mesin' => 'required|integer|min:1',
         ]);
 
-        Mobil::create($request->validated());
+        Mobil::create($validatedData);
 
         return redirect()->route('mobils.index')
             ->with('success', 'Mobil berhasil ditambahkan.');
@@ -101,13 +101,13 @@ class MobilController extends Controller
      */
     public function update(Request $request, Mobil $mobil)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'merek' => 'required|string|max:255',
             'harga' => 'required|numeric|min:0',
             'kapasitas_mesin' => 'required|integer|min:1',
         ]);
 
-        $mobil->update($request->validated());
+        $mobil->update($validatedData);
 
         return redirect()->route('mobils.index')
             ->with('success', 'Mobil berhasil diperbarui.');
